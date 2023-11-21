@@ -1,6 +1,7 @@
 package com.springboot.excel.entity;
 import java.util.Date;
 
+
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -11,6 +12,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
+
+import com.lowagie.text.pdf.PdfPCell;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -25,11 +28,14 @@ public class ExcelEntity {
 	
 		
 		@Id
-		@GeneratedValue(generator = "UUID")
+		/*@GeneratedValue(generator = "UUID")
 		@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
 		@Column(name = "id", updatable = false, nullable = false)
 		@Type(type = "uuid-char")
-		private UUID id;
+		private UUID id;*/
+	
+	@Column(name = "id")
+	private char id;
 		
 		@Column(name = "name")
 		private String name;
